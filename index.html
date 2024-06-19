@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            position: relative;
+            scroll-behavior: smooth;
+            background-image: url("images/background/1.jpg");
+            background-color: #cccccc; /* Used if the image is unavailable */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+        }
+        .navbar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .about-section p{
+            font-size: 20px;
+            font-family: Sans-Serif;
+            backdrop-filter: blur(50%);
+        }
+        .about-section, .projects-section, .skills-section, .contact-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+        .about-section h2, .projects-section h2, .skills-section h2, .contact-section h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-family: Monospace;
+        }
+        .about-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .about-section .about-text {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .card {
+            margin-bottom: 30px;
+            background-color: #F6F6F8;
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .skills-section .card .skill-icon {
+            height: 100px;
+            width: 100%;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .card-text {
+            text-align: left;
+        }
+        .contact-section {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 60px 0;
+        }
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-info i {
+            margin-right: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            padding: 3px;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section (for scrolling back to top) -->
+    <section id="home"></section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2>About</h2>
+            <img src="images/about/1.JPG" alt="Profile Image">
+            <div class="about-text">
+                <p>I am a creative problem solver who harnesses the power of AI and coding to connect data with technology. I am passionate about discovering innovative solutions that make a tangible impact in the real world.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/projects/1.png" class="card-img-top" alt="Project 1 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Clustering Political Posts</h5>
+                            <p class="card-text">Clustering Political Social Media Posts using kmeans and visualizing with UMAP.</p>
+                            <a href="https://github.com/tomervazana/Clustering-Political-Posts" class="btn btn-secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/projects/2.png" class="card-img-top" alt="Project 2 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Face Mask Object Detection</h5>
+                            <p class="card-text">Face mask and temperature detection with Raspberry Pi
+                                <br>A simple solution to lower the spread of the virus by checking that people are wearing their mask and also their temperature before they enter a crowded or enclosed place.<br>
+                                Few different solutions were tested:
+                                <ol class="card-text">
+                                    <li><b>Deep learning:</b> Transfer learning (MobileNetV2 / NASNetLarge)</li>
+                                    <li><b>Boosting:</b> Adaboost / GAB / Gradient Boost / RAB</li>
+                                    <li><b>Classic ML:</b> PCA / KNN / RF (random forest), SVC</li>
+                                </ol>
+                            </p>
+                            <a href="https://github.com/tomervazana/Face-Mask-Object-Detection-With-CNN-Boosting-PCA" class="btn btn-secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/skills/1.png" class="card-img-top skill-icon" alt="Skill 1 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">Python</h5>
+                            <p class="card-text">4 years of experiance using Python for AI and Server Side web development.
+                                Vast knowledge and experience in ML and DL Libraries: TensorFlow, PyTorch, Scikit-learn, OpenCV Hugging Face, Transformers, Keras, Numpy, Pandas, NLTK, Plotly, seaborn, PyCUDA, RegEx
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/skills/2.png" class="card-img-top skill-icon" alt="Skill 3 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">SQL</h5>
+                            <p class="card-text">Proeficient in building and optimizing SQL queries, SQL functions, and SQL databases optimization, and best practices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/skills/3.png" class="card-img-top skill-icon" alt="Skill 2 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">AI</h5>
+                            <p class="card-text">Developed and deployed NLP and Computer Vision ML / DL models. Proficient in a variety of data science and ML frameworks and tools including NumPy, Pandas, Scikit-Learn, TensorFlow, Transformers, HuggingFace, Keras, and PyTorch.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/skills/4.png" class="card-img-top skill-icon" alt="Skill 4 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">NLP</h5>
+                            <p class="card-text">Extensive experience in Natural Language Processing (NLP) Developed and deployed AI models covering Text Embeddings, Text Clustering, Sentiment Analysis, Text Generation / Generative AI, Text Classification, LLMs, Text Similarity, NoSQL - semantic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/skills/5.png" class="card-img-top skill-icon" alt="Skill 4 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">LLMs</h5>
+                            <p class="card-text">Proficient in Prompt Engineering and LLMs fine-tuning including Text Generation, Text Classification, Text Similarity. (Transfer Learning, PEFT - LoRA).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/skills/6.png" class="card-img-top skill-icon" alt="Skill 4 Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">Computer Vision</h5>
+                            <p class="card-text">Proficient in Computer Vision (CV) developed ML and DL models for Image Classification, Object Detection, feature detection / feature extraction. These model were developed using ML algorithms such as: PCA, SVM, Neural networks, Adaboost, KNN, ANN, HAAR.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> tomer.vazana.ai@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +972 052-8665242</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/tomervazana/" data-toggle="tooltip" title="LinkedIn">
+                    <img src="icons/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/tomervazana" data-toggle="tooltip" title="GitHub">
+                    <img src="icons/github.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+</html>
