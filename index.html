@@ -28,11 +28,11 @@
             font-family: Sans-Serif;
             backdrop-filter: blur(50%);
         }
-        .about-section, .projects-section, .skills-section, .contact-section {
+        .about-section, .projects-section, .skills-section, .contact-section, .schedule-section {
             text-align: center;
             padding: 60px 0;
         }
-        .about-section h2, .projects-section h2, .skills-section h2, .contact-section h2 {
+        .about-section h2, .projects-section h2, .skills-section h2, .contact-section h2, .schedule-section h2 {
             font-size: 3rem;
             margin-bottom: 30px;
             font-family: Monospace;
@@ -66,13 +66,16 @@
         .card-text {
             text-align: left;
         }
-        .contact-section {
+        .contact-section, .schedule-section {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 60px 0;
         }
         .contact-info {
+            margin-bottom: 30px;
+        }
+        .schedule-meeting {
             margin-bottom: 30px;
         }
         .contact-info i {
@@ -119,6 +122,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#schedule">Schedule</a>
                     </li>
                 </ul>
             </div>
@@ -256,6 +262,33 @@
                 <a href="https://github.com/tomervazana" data-toggle="tooltip" title="GitHub">
                     <img src="icons/github.png" alt="GitHub">
                 </a>
+            </div>
+    </section>
+    <section class="schedule-section" id="schedule">
+            <div class="container">
+                <h2>Schedule a meeting</h2>
+                <div class="schedule-meeting">
+                    <!-- Google Calendar Appointment Scheduling begin -->
+                    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+                    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                    <script>
+                        (function() {
+                        var target = document.currentScript;
+                        window.addEventListener('load', function() {
+                            calendar.schedulingButton.load({
+                            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ34C8b3jYOFQR7TFjt-yDNgtZ27VbKvlbF7QlkCpdCgH0CzTfBpk620PDf-4P8nS2z7DbAx-oke?gv=true',
+                            color: '#039BE5',
+                            label: 'Book an appointment',
+                            target,
+                            });
+                        });
+                        })();
+                    </script>
+                    <!-- end Google Calendar Appointment Scheduling -->
+                </div>
+                <div class="google-calendar">
+                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FJerusalem&bgcolor=%23ffffff&title=My%20Calendar&src=dG9tZXJ2YTIyQGdtYWlsLmNvbQ&src=dG9tZXIudmF6YW5hLmFpQGdtYWlsLmNvbQ&color=%237986CB&color=%23E67C73" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
             </div>
         </div>
     </section>
