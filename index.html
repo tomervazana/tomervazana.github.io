@@ -81,6 +81,9 @@
         .contact-info i {
             margin-right: 10px;
         }
+        iframe{
+           filter: invert(.9) saturate(0.5) hue-rotate(145deg);
+        }
         .social-icons a {
             margin: 0 10px;
             display: inline-block;
@@ -95,6 +98,33 @@
         }
         .social-icons img:hover {
             transform: scale(1.1);
+        }
+        @media (max-width: 550px) {
+        .big-container {
+            display: none;
+        }
+        }
+        @media (min-width: 550px) {
+        .small-container {
+            display: none;
+        }
+        }
+        /* Responsive iFrame */
+        .responsive-iframe-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+        }
+        .responsive-iframe-container iframe,   
+        .vresponsive-iframe-container object,  
+        .vresponsive-iframe-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         }
     </style>
 </head>
@@ -287,7 +317,13 @@
                     <!-- end Google Calendar Appointment Scheduling -->
                 </div>
                 <div class="google-calendar">
-                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FJerusalem&bgcolor=%23ffffff&title=My%20Calendar&src=dG9tZXJ2YTIyQGdtYWlsLmNvbQ&src=dG9tZXIudmF6YW5hLmFpQGdtYWlsLmNvbQ&color=%237986CB&color=%23E67C73" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    <div class="responsive-iframe-container big-container">
+                        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FJerusalem&bgcolor=%23ffffff&title=My%20Calendar&src=dG9tZXJ2YTIyQGdtYWlsLmNvbQ&src=dG9tZXIudmF6YW5hLmFpQGdtYWlsLmNvbQ&color=%237986CB&color=%23E67C73" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <div class="responsive-iframe-container small-container">
+                        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FJerusalem&bgcolor=%23ffffff&title=My%20Calendar&src=dG9tZXJ2YTIyQGdtYWlsLmNvbQ&src=dG9tZXIudmF6YW5hLmFpQGdtYWlsLmNvbQ&color=%237986CB&color=%23E67C73" height="600" width="400" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+
                 </div>
             </div>
         </div>
